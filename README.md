@@ -1,9 +1,9 @@
 # Recipe-React-Native
 
 <p align="center">
-  <img src="HomeScreen.png" width="400">
-  <img src="ResultScreen.png" width="400">
-  <img src="ResultScreen2.png" width="400">
+  <img src="HomeScreen.png" width="200">
+  <img src="ResultScreen.png" width="200">
+  <img src="ResultScreen2.png" width="200">
 </p>
 
 ## Overview
