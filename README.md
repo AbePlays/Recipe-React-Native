@@ -10,6 +10,7 @@
 
 Recipe is an application built using React Native! Since its developed in React Native, it can be installed on both Android and iOS. The user is required to enter a food item and the app searches for 10 different dishes that can be made using the food item entered. The app incorporates:
 
+- Expo CLI
 - React Native
 - React Native Navigation
 - API from Edamam
