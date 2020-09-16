@@ -1,8 +1,8 @@
 # Recipe-React-Native
 
 <p align="center">
-  <img src="HomeScreen.jpeg" width="300">
-  <img src="ResultScreen.jpeg" width="300">
+  <img src="HomeScreen.png" width="300">
+  <img src="ResultScreen.png" width="300">
 </p>
 
 ## Overview
