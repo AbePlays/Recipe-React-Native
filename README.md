@@ -2,7 +2,6 @@
 
 <p align="center">
   <img src="HomeScreen.png" width="300">
-  <img src="ResultScreen2.png" width="300">
   <img src="ResultScreen.png" width="300">
 </p>
 
