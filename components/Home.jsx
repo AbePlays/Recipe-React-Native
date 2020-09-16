@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Alert } from "react-native";
 import {
   StyleSheet,
   Text,
@@ -11,11 +12,24 @@ import {
 function Home({ navigation }) {
   const [food, setFood] = useState("");
 
+  const handleSearch = () => {
+    if (food.length > 0) {
+      navigation.navigate("Results", {
+        food: food,
+      });
+      setFood("");
+    } else {
+      Alert.alert("Search input empty!");
+    }
+  };
+
   return (
-    <View style={{ flex: 1, backgroundColor: "#c9ead0" }}>
+    <View
+      style={{ flex: 1, backgroundColor: "#EEE9D0", justifyContent: "center" }}
+    >
       <View style={styles.imageContainer}>
         <Image
-          source={require("../assets/food.png")}
+          source={require("../assets/food-3.png")}
           style={styles.image}
         ></Image>
       </View>
@@ -27,6 +41,7 @@ function Home({ navigation }) {
       </View>
       <View style={styles.inputContainer}>
         <TextInput
+          value={food}
           placeholder="Enter Name Of Food"
           style={styles.input}
           onChangeText={(text) => {
@@ -37,11 +52,7 @@ function Home({ navigation }) {
       <View style={styles.btnContainer}>
         <TouchableOpacity
           style={styles.btnTextContainer}
-          onPress={() =>
-            navigation.navigate("Results", {
-              food: food,
-            })
-          }
+          onPress={handleSearch}
         >
           <Text style={styles.btnText}>Search</Text>
         </TouchableOpacity>
@@ -52,7 +63,6 @@ function Home({ navigation }) {
 
 const styles = StyleSheet.create({
   imageContainer: {
-    marginTop: 80,
     alignItems: "center",
   },
   image: {
@@ -66,11 +76,11 @@ const styles = StyleSheet.create({
   textHeading: {
     fontWeight: "bold",
     fontSize: 25,
-    color: "green",
+    color: "#515A5A",
   },
   textSubheading: {
     marginTop: 5,
-    color: "green",
+    color: "#515A5A",
   },
   inputContainer: {
     marginTop: 50,
@@ -79,12 +89,12 @@ const styles = StyleSheet.create({
   input: {
     maxWidth: 500,
     width: "80%",
-    borderColor: "green",
+    borderColor: "#515A5A",
     borderWidth: 3,
     borderRadius: 10,
     height: 50,
     paddingLeft: 10,
-    color: "green",
+    color: "#515A5A",
   },
   btnContainer: {
     marginTop: 30,
@@ -92,9 +102,8 @@ const styles = StyleSheet.create({
   },
   btnTextContainer: {
     maxWidth: 500,
-
     borderRadius: 10,
-    backgroundColor: "green",
+    backgroundColor: "#515A5A",
     width: "80%",
     height: 50,
     justifyContent: "center",
