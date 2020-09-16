@@ -1,25 +1,19 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
+import Icon from "react-native-vector-icons/AntDesign";
 
 function RecipeCard(props) {
   console.log(props.title);
 
-  async function loadFonts() {
-    await loadAsync({
-      OSBOLD: require("../assets/Open_Sans/OpenSans-Bold.ttf"),
-      RLW: require("../assets/Raleway/Raleway-SemiBold.ttf"),
-    });
-  }
-
   return (
-    <ScrollView style={styles.topView}>
-      <View>
-        <Text style={styles.topText}>{props.title}</Text>
-      </View>
+    <View style={[styles.topView, { backgroundColor: props.bgColor }]}>
       <View style={styles.imageContainer}>
         <Image source={{ uri: props.url }} style={styles.image} />
       </View>
-      <Text style={styles.midText}>HOW TO MAKE ?</Text>
+      <Text style={styles.topText}>{props.title}</Text>
+      <Text style={styles.midText}>
+        How to make <Icon name="arrowright" size={20} />
+      </Text>
       <View style={styles.bottomTextContainer}>
         {props.lots.map((line) => (
           <View style={styles.bottomView}>
@@ -28,43 +22,43 @@ function RecipeCard(props) {
           </View>
         ))}
       </View>
-    </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   topView: {
-    elevation: 5,
+    elevation: 2,
     padding: 10,
-    margin: 7,
-    backgroundColor: "white",
+    marginVertical: 10,
+    marginHorizontal: 30,
+    borderRadius: 10,
   },
   topText: {
+    paddingLeft: 20,
     fontSize: 23,
-    fontWeight: "700",
-    textTransform: "uppercase",
-    fontFamily: "OSBOLD",
+    fontWeight: "bold",
     letterSpacing: 2,
+    fontSize: 35,
     marginTop: 20,
-    textAlign: "center",
+    textTransform: "uppercase",
   },
   imageContainer: {
-    marginTop: 30,
+    marginTop: 20,
     alignItems: "center",
   },
   image: {
-    height: 200,
-    width: 200,
-    borderRadius: 100,
-    borderWidth: 5,
-    borderColor: "#ccc",
+    height: 300,
+    width: 300,
+    borderRadius: 150,
+    borderWidth: 3,
+    borderColor: "white",
   },
   midText: {
-    textAlign: "center",
-    fontFamily: "RLW",
-    marginTop: 30,
+    paddingLeft: 20,
+    marginTop: 10,
     fontSize: 20,
-    fontWeight: "700",
+    fontWeight: "bold",
     color: "#404040",
   },
   bottomTextContainer: {
@@ -83,7 +77,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: "500",
     lineHeight: 20,
-    color: "#808080",
+    color: "#666",
   },
 });
 
