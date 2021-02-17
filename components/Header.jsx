@@ -1,18 +1,13 @@
 import React from "react";
-import { TouchableOpacity } from "react-native";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 export default function Header({ navigation }) {
   return (
-    <View style={{ paddingLeft: 20, marginTop: 50 }}>
+    <View style={{ paddingHorizontal: 20, marginTop: 50 }}>
       <View
         style={{
           flexDirection: "row",
-          height: 30,
-          alignItems: "center",
-          width: "55%",
-          justifyContent: "space-between",
         }}
       >
         <TouchableOpacity
@@ -25,10 +20,13 @@ export default function Header({ navigation }) {
       </View>
       <Text
         style={{
-          fontSize: 40,
+          fontSize: 25,
+          marginVertical: 10,
+          textAlign: "center",
           fontWeight: "bold",
-          marginTop: 10,
-          textDecorationLine: "underline",
+          letterSpacing: 3,
+          textTransform: "uppercase",
+          fontWeight: "100",
         }}
       >
         Results

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Alert } from "react-native";
 import {
+  Alert,
   StyleSheet,
   Text,
   View,
@@ -42,7 +42,7 @@ function Home({ navigation }) {
       <View style={styles.inputContainer}>
         <TextInput
           value={food}
-          placeholder="Enter Name Of Food"
+          placeholder="Enter Name of Food"
           style={styles.input}
           onChangeText={(text) => {
             setFood(text);
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     borderRadius: 10,
     height: 50,
-    paddingLeft: 10,
+    paddingLeft: 20,
     color: "#515A5A",
   },
   btnContainer: {
